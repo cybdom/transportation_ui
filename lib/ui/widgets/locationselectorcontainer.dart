@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class LocationSelectorContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,26 +34,28 @@ class LocationSelectorContainer extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 15.0),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          "From",
-                          style: Theme.of(context)
-                              .textTheme
-                              .subtitle
-                              .apply(color: Colors.black38),
-                        ),
-                        GestureDetector(
-                            child: Text(
-                              "Your Location",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .title
-                                  .apply(color: Colors.black87),
-                            ),
-                            onTap: () {}),
-                      ],
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "From",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.apply(color: Colors.black38),
+                          ),
+                          GestureDetector(
+                              child: Text(
+                                "Your Location",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.apply(color: Colors.black87),
+                              ),
+                              onTap: () {}),
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -75,26 +76,29 @@ class LocationSelectorContainer extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 15.0),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          "To",
-                          style: Theme.of(context)
-                              .textTheme
-                              .subtitle
-                              .apply(color: Colors.black38),
-                        ),
-                        GestureDetector(
-                            child: Text(
-                              "Choose A Destination",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .title
-                                  .apply(color: Colors.black87),
-                            ),
-                            onTap: () {}),
-                      ],
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "To",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.apply(color: Colors.black38),
+                          ),
+                          GestureDetector(
+                              child: Text(
+                                "Choose A Destination",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.apply(color: Colors.black87),
+                                overflow: TextOverflow.clip,
+                              ),
+                              onTap: () {}),
+                        ],
+                      ),
                     )
                   ],
                 ),

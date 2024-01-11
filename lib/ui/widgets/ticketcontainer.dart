@@ -8,11 +8,10 @@ class TicketContainer extends StatelessWidget {
       padding: EdgeInsets.all(15.0),
       margin: EdgeInsets.symmetric(vertical: 15.0),
       decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.grey[300],
-        ),
-        borderRadius: BorderRadius.circular(25.0)
-      ),
+          border: Border.all(
+            color: Colors.grey.shade300,
+          ),
+          borderRadius: BorderRadius.circular(25.0)),
       child: Column(
         children: <Widget>[
           Row(
@@ -32,11 +31,11 @@ class TicketContainer extends StatelessWidget {
                         children: [
                           TextSpan(
                             text: "05",
-                            style: Theme.of(context).textTheme.display1,
+                            style: Theme.of(context).textTheme.headlineMedium,
                           ),
                           TextSpan(
                               text: "min",
-                              style: Theme.of(context).textTheme.subtitle),
+                              style: Theme.of(context).textTheme.titleSmall),
                         ],
                       ),
                     )
@@ -138,8 +137,10 @@ class TicketContainer extends StatelessWidget {
               ),
               Text(
                 "19:57",
-                style:
-                    Theme.of(context).textTheme.body2.apply(color: Colors.blue),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.apply(color: Colors.blue),
               ),
             ],
           ),
@@ -167,7 +168,7 @@ class TicketContainer extends StatelessWidget {
                         width: 9.0,
                       ),
                       Text("Boghni",
-                          style: Theme.of(context).textTheme.subtitle),
+                          style: Theme.of(context).textTheme.titleSmall),
                     ],
                   ),
                   SizedBox(
@@ -188,21 +189,23 @@ class TicketContainer extends StatelessWidget {
                         width: 9.0,
                       ),
                       Text("Tizi Ouzou",
-                          style: Theme.of(context).textTheme.subtitle),
+                          style: Theme.of(context).textTheme.titleSmall),
                     ],
                   ),
                 ],
               ),
-              RaisedButton.icon(
-                color: lightGreen,
+              ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: lightGreen,
+                ),
                 icon: Icon(Icons.confirmation_number, color: Colors.white),
                 onPressed: () => Navigator.of(context).pushNamed('details'),
                 label: Text(
                   "Ticket: 70 DA",
                   style: Theme.of(context)
                       .textTheme
-                      .button
-                      .apply(color: Colors.white),
+                      .labelLarge
+                      ?.apply(color: Colors.white),
                 ),
               )
             ],

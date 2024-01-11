@@ -3,17 +3,17 @@ import 'package:transportation_app/global.dart';
 
 class LocationRow extends StatelessWidget {
   final Color color;
-  final Border border;
-  final Icon icon;
+  final Border? border;
+  final Icon? icon;
   final String location, time;
-  const LocationRow({
-    Key key,
-    this.icon,
-    @required this.location,
-    @required this.time,
-    @required this.color,
-    this.border,
-  }) : super(key: key);
+
+  const LocationRow(
+      {super.key,
+      required this.color,
+      this.border,
+      this.icon,
+      required this.location,
+      required this.time});
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +41,16 @@ class LocationRow extends StatelessWidget {
                 "$location",
                 style: Theme.of(context)
                     .textTheme
-                    .subhead
-                    .apply(fontWeightDelta: 2, color: darkBlue),
+                    .titleMedium
+                    ?.apply(fontWeightDelta: 2, color: darkBlue),
               ),
               SizedBox(height: 2.0),
               Text(
                 "$time",
-                style:
-                    Theme.of(context).textTheme.body1.apply(color: Colors.grey),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium
+                    ?.apply(color: Colors.grey),
               )
             ],
           )

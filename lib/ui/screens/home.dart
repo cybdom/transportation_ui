@@ -77,7 +77,7 @@ class HomeScreen extends StatelessWidget {
       ),
       backgroundColor: lightGreen,
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(15.0),
@@ -103,7 +103,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       DepartureSelector(),
                       Spacer(),
-                      FlatButton.icon(
+                      TextButton.icon(
                         onPressed: () {},
                         label: Text(
                           "Filters",
@@ -124,36 +124,34 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 25.0,
             ),
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      offset: Offset(0, -5),
-                      blurRadius: 9,
-                    ),
-                  ],
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(35.0),
-                    topRight: Radius.circular(35.0),
+            Container(
+              padding: const EdgeInsets.all(15.0),
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black12,
+                    offset: Offset(0, -5),
+                    blurRadius: 9,
                   ),
+                ],
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(35.0),
+                  topRight: Radius.circular(35.0),
                 ),
-                child: Column(
-                  children: <Widget>[
-                    MeansTransportMenu(),
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: 5,
-                        itemBuilder: (ctx, i) {
-                          return TicketContainer();
-                        },
-                      ),
-                    )
-                  ],
-                ),
+              ),
+              child: Column(
+                children: <Widget>[
+                  MeansTransportMenu(),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: 5,
+                    itemBuilder: (ctx, i) {
+                      return TicketContainer();
+                    },
+                  )
+                ],
               ),
             )
           ],
